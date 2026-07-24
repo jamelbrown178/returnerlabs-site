@@ -69,15 +69,25 @@
   <section id="privacy">
     <h2>Privacy Policy</h2>
     <p class="meta">
-      Last updated: July 9, 2026<br>
+      Last updated: July 24, 2026<br>
       Contact: <a href="mailto:contact@returnerlabs.com">contact@returnerlabs.com</a>
     </p>
 
     <div class="short">
-      <p><strong>The short version:</strong> Returner does not collect your data.
-      There is no account, no sign-up, no analytics, and no tracking.
-      Everything you do in Returner stays on your phone.</p>
+      <p><strong>The short version:</strong> Returner has no account, no ads, and no
+      tracking. Everything you record — what you're quitting, your check-ins, your
+      notes — stays on your phone and is never sent anywhere. The one exception: if
+      the app crashes, an anonymous crash report is sent so the bug can be fixed. It
+      contains technical details only, never your recovery data, and is never linked
+      to you.</p>
     </div>
+
+    <p class="meta"><strong>What changed on July 24, 2026:</strong> earlier versions
+    of this policy said Returner made no network calls and used no telemetry SDK of
+    any kind. Starting with the next release that is no longer strictly true: we added
+    anonymous crash reporting, and only crash reporting. The reason is in
+    <a href="#crash-reports">Crash reports</a> below. Nothing else about how your
+    recovery data is handled has changed — it still never leaves your device.</p>
 
     <h3>What Returner stores, and where</h3>
     <p>Returner keeps your recovery profile (what you're quitting and since
@@ -93,11 +103,14 @@
     <h3>What Returner does <em>not</em> do</h3>
     <ul>
       <li>No account or registration; we never learn your name or email.</li>
-      <li>No analytics or telemetry SDKs; we do not know you installed the app.</li>
+      <li>No product analytics — we do not track which screens you open, how often
+      you use the app, which features you touch, or what you're quitting.</li>
       <li>No advertising, no ad identifiers, no tracking across apps or websites.</li>
       <li>No selling or sharing of personal data — there is nothing to sell.</li>
       <li>No cloud sync or server backups of your data.</li>
-      <li>No network calls at all in normal use.</li>
+      <li>No network calls in normal use. The only data that ever leaves your phone
+      without you pressing a button is an anonymous crash report, and only if
+      something actually breaks.</li>
     </ul>
 
     <h3>Export — data you choose to move</h3>
@@ -105,6 +118,29 @@
     device's share sheet. Where that file goes is entirely your choice; once
     exported, it is outside the app's protection. The matching import restores
     a previous export.</p>
+
+    <h3 id="crash-reports">Crash reports</h3>
+    <p>If Returner crashes or hits a serious error, an anonymous crash report is sent
+    to <a href="https://sentry.io/privacy/">Sentry</a>, an error-monitoring service, so
+    the bug can be found and fixed. This is the only data Returner sends off your
+    device on its own.</p>
+    <p>A crash report contains technical information only: the error message, the
+    location in our code that failed, your device model, and your operating-system and
+    app version. It does <em>not</em> contain your name, your email, or any of your
+    recovery data — not what you're quitting, not your check-ins, notes, milestones,
+    savings, or history. Sentry assigns a random installation identifier that is not
+    your device ID or advertising ID and cannot be used to identify you. We never
+    attach your identity to it, and it is never used for advertising or tracking.</p>
+    <p>On the App Store, this appears on Returner's privacy label as
+    <strong>"Diagnostics — Crash Data — Not Linked to You — Not Used to Track
+    You."</strong> That is the whole label; nothing else is declared.</p>
+    <p>Why we added it: Returner is built with React Native, and Apple's own crash
+    reporting cannot see errors that happen in the app's JavaScript layer. A release
+    in July 2026 crashed on launch for some testers while Apple's tools reported no
+    crashes at all — we were flying blind on a bug that made the app unusable.
+    Anonymous crash reporting is how we make sure that a broken release gets found and
+    fixed in hours instead of weeks. We judged that a better deal for you than an app
+    that silently breaks.</p>
 
     <h3>Notifications</h3>
     <p>Reminders are optional and scheduled locally on your device — no push
@@ -135,8 +171,9 @@
     <h3>Health information</h3>
     <p>Your substance choice, check-ins, Body Check answers, and notes are
     sensitive health-adjacent information — which is exactly why the app is
-    built local-first. They receive the same treatment as everything else:
-    stored only on your device, never transmitted. Returner is a motivational
+    built local-first. They are stored only on your device and are never
+    transmitted, including in crash reports, which carry technical details
+    about our code and never your content. Returner is a motivational
     tool providing general wellness information; it is not medical advice,
     medical treatment, or a medical device.</p>
 
